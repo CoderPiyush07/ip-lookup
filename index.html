@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address Lookup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IP Address Lookup</h1>
+            <p>Enter an IP address to get location information</p>
+        </header>
+
+        <main>
+            <div class="lookup-form">
+                <div class="input-group">
+                    <input type="text" id="ipInput" placeholder="Enter IP address (e.g., 8.8.8.8)" autocomplete="off">
+                    <button id="lookupBtn">Lookup</button>
+                </div>
+                <div class="current-ip">
+                    <button id="myIpBtn">Use My IP</button>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Looking up IP address...</p>
+            </div>
+
+            <div id="error" class="error hidden">
+                <p></p>
+            </div>
+
+            <div id="results" class="results hidden">
+                <h2>Location Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>IP Address:</label>
+                        <span id="resultIp"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Country:</label>
+                        <span id="resultCountry"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Region:</label>
+                        <span id="resultRegion"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>City:</label>
+                        <span id="resultCity"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Coordinates:</label>
+                        <span id="resultCoords"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>ISP:</label>
+                        <span id="resultIsp"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Timezone:</label>
+                        <span id="resultTimezone"></span>
+                    </div>
+                </div>
+                
+                <div id="mapContainer" class="map-container">
+                    <h3>Location on Map</h3>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with ❤️ | Data provided by <a href="https://ip-api.com" target="_blank">ip-api.com</a></p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
